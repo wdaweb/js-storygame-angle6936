@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <script>
+        function question(choose, right, wrong, result) {
+            if (confirm(choose) == result) alert(right);
+            else {
+                alert(wrong + "game over");
+                return true;
+            }
+        }
+        function games() {
+            let name;
+            if ((name = prompt("在遊戲開始之前，請輸入你的遊戲名字", "匿名"))) {
+                alert(name + "方式進行遊戲");
+            } else {
+                name = "匿名";
+                alert("就以匿名方式進行遊戲吧");
+            }
+            if (confirm(`${name}，你準備好了嗎`)) {
+                alert("開始測試吧！");
+                if (
+                    question(
+                        "你會投票給韓國瑜嗎？",
+                        "跟我一樣聰明 我們一起走向和平美好的未來吧",
+                        "你幹嘛自己找死啦",
+                        
+                        false
+                    )
+                )
+                    return;
+                if (
+                    question(
+                        "你會參加選醜比賽嗎？",
+                        "不花時間在這比賽上是正確的，因為高顏值的你怎麼假扮醜，都一樣美帥",
+                        "對不起我們不接受專業人士報名",
+                        
+                        false
+                    )
+                )
+                    return;
+                if (
+                    question(
+                        "如果有人給你一千萬，原因是「因為你很醜」你還會拿嗎？",
+                        "你醜但你不笨",
+                        "天啊！又醜又笨沒救了",
+                        true
+                    )
+                )
+                    return;
+                if (
+                    question(
+                        "同學 作業可以借我抄一下嗎",
+                        "不害自己也幫助他人 讚",
+                        "抄的太明顯被發現啦！所以一併處罰",
+                        false
+                    )
+                )
+                    return;
+                if (
+                    question(
+                        "學校是你第二個家嗎？",
+                        "認真的你 恭喜順利畢業啦",
+                        "老師在上課 你以為是自己的家 想睡就睡！退訓",
+                        false
+                    )
+                )
+                    return;
+                    window.alert(`恭喜${name}挑戰成功`);
+            } else {
+                window.alert("你即將退出闖關遊戲");
+            }
+        }
+        
+        games();
+        
+
+
+    </script>
+</body>
+
+</html>
